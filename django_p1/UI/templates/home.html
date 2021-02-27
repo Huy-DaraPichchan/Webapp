@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Employee Info</title>
+        <style>
+            .p-t-2 {
+                padding-top: 2rem;
+            }
+            body {
+                font-size: 30px;
+                background: linear-gradient(180deg, rgb(0, 153, 255), rgb(0, 255, 234));
+            }
+            .container {
+                
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                
+            }
+            .direction-col {
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            img {
+                height: 500px;
+                width: 400px;
+            }
+            a:hover {
+                color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        {% block content %}
+        <nav>
+            <div>
+                <p><a href="accounts/register">Login</a></p>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Employee List</h1>
+        </div>
+        {% for person in persons %}
+       <div>
+           <div class="container">
+               <img src="{{person.image.url}}">
+           </div>
+           <div class="container">
+               <div class="direction-col">
+                <p>Name: {{person.name}}</p>
+                <p>Age: {{person.age}}</p>
+                <p>Marital: {{person.marital}}</p>
+               </div>
+           </div>
+           
+       </div>
+       {% endfor %}
+       <div class="container p-t-2">
+           <form action="" method="post">
+                <input type="submit" name="post">
+           </form>
+       </div>
+       {% endblock %}
+    </body>
+</html>
+
+
+ <!-- <form accept="" method="post">
+            <input type="text" name="name" placeholder="Username"><br><br>
+            <input type="number" name="age" placeholder="Age"><br><br>
+            <input type="radio" name="gender" value="M">
+            <label for="M">Male</label>
+            <input type="radio" name="gender" value="F">
+            <label for="F">Female</label>
+            <br><br>
+            <input type="checkbox" name="marital" value="single">
+            <label for="single">Single</label>
+            <br><br>
+            <input type="submit" name="submit">
+        </form> -->

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Employee Info</title>
+    <style>
+        .p-t-2 {
+            padding-top: 2rem;
+        }
+
+        body {
+            font-size: 30px;
+            background: linear-gradient(180deg, rgb(0, 153, 255), rgb(0, 255, 234));
+        }
+
+        .container {
+
+            display: flex;
+            align-content: center;
+            justify-content: center;
+
+        }
+
+        .direction-col {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        img {
+            height: 500px;
+            width: 400px;
+        }
+
+        a:hover {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>Register</h1>
+    </div>
+    <div class="container">
+    <form action="register" method="POST">
+        {% csrf_token %}
+            <input type="text" name="fname" placeholder="First Name: "><br>
+            <input type="text" name="lname" placeholder="Last Name: "><br>
+            <input type="text" name="uname" placeholder="Username: "><br>
+            <input type="email" name="email" placeholder="Email: "><br>
+            <input type="password" name="pwd" placeholder="Password: "><br>                   
+            <input type="password" name="cpwd" placeholder="Confirm Password: "><br>        
+            <input type="submit" name="submit"><br>            
+        
+    </form>
+    </div>
+</body>
+
+</html>
